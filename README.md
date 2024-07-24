@@ -12,11 +12,11 @@ npm install react-native-svga
 
 
 ```js 
-import { SVGA } from 'react-native-svga';
+import { SvgaView } from 'react-native-svga';
 
 // ...
 
-<SVGA
+<SvgaView
     source={{uri: "http://example.com/test.svga"}}
     style={{
         position: "absolute",
