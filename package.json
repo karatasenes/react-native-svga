@@ -1,5 +1,5 @@
 {
-  "name": "react-native-svga",
+  "name": "rn-svga-player",
   "version": "0.1.0",
   "description": "SVGA Player for React Native",
   "source": "./src/index.tsx",
@@ -76,7 +76,7 @@
     "prettier": "^3.0.3",
     "react": "18.2.0",
     "react-native": "0.74.3",
-    "react-native-builder-bob": "^0.26.0",
+    "react-native-builder-bob": "^0.27.0",
     "release-it": "^15.0.0",
     "turbo": "^1.10.7",
     "typescript": "^5.2.2"
