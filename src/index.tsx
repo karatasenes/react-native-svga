@@ -1,22 +1,12 @@
-import { NativeModules, Platform } from 'react-native';
+import { requireNativeComponent, type ViewProps } from 'react-native';
+import React from 'react';
 
-const LINKING_ERROR =
-  `The package 'react-native-svga' doesn't seem to be linked. Make sure: \n\n` +
-  Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
-  '- You rebuilt the app after installing the package\n' +
-  '- You are not using Expo Go\n';
+const SvgaViewManager = requireNativeComponent<SvgaViewProps>('SvgaView');
 
-const Svga = NativeModules.Svga
-  ? NativeModules.Svga
-  : new Proxy(
-      {},
-      {
-        get() {
-          throw new Error(LINKING_ERROR);
-        },
-      }
-    );
-
-export function multiply(a: number, b: number): Promise<number> {
-  return Svga.multiply(a, b);
+interface SvgaViewProps extends ViewProps {
+  source: string;
 }
+
+export const SvgaView: React.FC<SvgaViewProps> = ({ source, ...props }) => {
+  return <SvgaViewManager {...props} source={source} />;
+};

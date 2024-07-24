@@ -1,14 +1,6 @@
-#import <React/RCTBridgeModule.h>
+#import <React/RCTViewManager.h>
+#import "YourProjectName-Swift.h" // Burada YourProjectName'i gerçek proje adınızla değiştirin
 
-@interface RCT_EXTERN_MODULE(Svga, NSObject)
-
-RCT_EXTERN_METHOD(multiply:(float)a withB:(float)b
-                 withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject)
-
-+ (BOOL)requiresMainQueueSetup
-{
-  return NO;
-}
-
+@interface RCT_EXTERN_MODULE(SVGAViewManager, RCTViewManager)
+RCT_EXPORT_VIEW_PROPERTY(source, NSString)
 @end
